@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS 1.6 Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="lobby">
+    <header>
+      <h1>CS 1.6 Web</h1>
+      <p class="sub">Crie uma sala, passe o código e jogue. Sem cadastro.</p>
+    </header>
+
+    <section class="card">
+      <h2>Criar sala</h2>
+      <form id="create-form">
+        <label>Nome <input id="room-name" maxlength="32" placeholder="Sala do pessoal"></label>
+        <label>Jogadores
+          <select id="room-max">
+            <option>4</option><option>6</option><option selected>10</option><option>16</option>
+          </select>
+        </label>
+        <button type="submit">Criar e entrar</button>
+      </form>
+      <p class="hint">Mapas alternando: <strong id="maps-label">...</strong></p>
+    </section>
+
+    <section class="card">
+      <h2>Entrar com código</h2>
+      <form id="join-form">
+        <input id="join-code" maxlength="5" placeholder="ABCDE" autocomplete="off" spellcheck="false">
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Salas <span id="rooms-count"></span></h2>
+      <ul id="rooms" class="rooms"></ul>
+      <p id="rooms-empty" class="hint" hidden>Nenhuma sala aberta.</p>
+    </section>
+
+    <p id="msg" class="msg" role="status"></p>
+  </main>
+
+  <main id="game" hidden>
+    <div class="bar">
+      <button id="leave" type="button">&larr; Sair da sala</button>
+      <span id="game-title"></span>
+    </div>
+    <canvas id="canvas" tabindex="-1"></canvas>
+    <div id="game-info" class="card" hidden></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

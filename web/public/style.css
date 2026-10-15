@@ -1,0 +1,37 @@
+:root {
+  --bg: #14171c; --card: #1d2229; --line: #2c333d; --text: #e6e9ee; --muted: #8b95a3;
+  --accent: #e8a33d; --accent-ink: #1a1304; --ok: #4cc38a; --warn: #e8a33d; --err: #ef6b6b;
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg: #f3f4f6; --card: #fff; --line: #d9dde3; --text: #1b1f24; --muted: #5d6673; --accent-ink: #1a1304; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { margin: 0; font-size: 1.8rem; }
+h2 { margin: 0 0 12px; font-size: 1.05rem; }
+.sub, .hint { color: var(--muted); margin: 4px 0 0; font-size: .9rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-top: 16px; }
+form { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; color: var(--muted); flex: 1 1 140px; }
+input, select { font: inherit; padding: 9px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+#join-code { text-transform: uppercase; letter-spacing: .25em; flex: 1 1 140px; }
+button { font: inherit; font-weight: 600; padding: 9px 16px; border-radius: 8px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+button.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.rooms { list-style: none; margin: 0; padding: 0; }
+.rooms li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.rooms li:first-child { border-top: 0; }
+.rooms .info { flex: 1; min-width: 0; }
+.rooms .name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rooms .meta { color: var(--muted); font-size: .82rem; }
+.code { font-family: ui-monospace, monospace; letter-spacing: .15em; }
+.badge { font-size: .75rem; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); }
+.badge.ready { color: var(--ok); border-color: var(--ok); }
+.badge.starting { color: var(--warn); border-color: var(--warn); }
+.msg { min-height: 1.4em; margin-top: 16px; color: var(--muted); }
+.msg.err { color: var(--err); }
+#game { max-width: none; padding: 12px; }
+.bar { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+#canvas { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; display: block; }
+#game-info pre { white-space: pre-wrap; word-break: break-all; margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
